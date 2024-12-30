@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "DSA-Tracker",
+    "version": "0.1",
+    "author": "Abhay Nosran",
+    "description": "A Chrome extension ",
+    "permissions": [
+      "tabs","storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://cses.fi/problemset/task/*"],
+        "js": ["content.js"],
+        "css" : ["content-styles.css"]
+      },
+      {
+        "matches" : ["https://leetcode.com/problems/*"],
+        "js" : ["leetcode/content.js"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "web_accessible_resources" : [
+      {
+        "resources": ["assets/bookmark.png"],
+        "matches" : ["<all_urls>"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "./assets/bookmark.png",
+        "24": "./assets/bookmark.png",
+        "32": "./assets/bookmark.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "A tooltip popup description when you hover over the Chrome Extension icon."
+    }
+  }
+  
