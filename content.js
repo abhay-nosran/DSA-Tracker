@@ -3,6 +3,25 @@ const problemName = document.querySelector("h1").textContent || "Problem Name No
 const problemURL = window.location.href;
 const tracker_key = "jattmagma";
 
+function applyTheme() {
+    const root = document.documentElement;
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (isDarkMode) {
+        root.classList.add('dark');
+        root.classList.remove('light');
+    } else {
+        root.classList.add('light');
+        root.classList.remove('dark');
+    }
+}
+
+// Listen for changes in the preferred color scheme
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+
+// Apply theme on initial load
+applyTheme();
+
 createButton();
 
 // Add the floating button

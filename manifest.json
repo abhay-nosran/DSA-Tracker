@@ -15,7 +15,8 @@
       },
       {
         "matches" : ["https://leetcode.com/problems/*"],
-        "js" : ["leetcode/content.js"]
+        "js" : ["leetcode/content.js"],
+        "css" : ["leetcode/content.css"]
       }
     ],
     "background": {
